@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>NJC Mining</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #0f0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+        input {
+            width: 250px;
+        }
+        button {
+            background-color: #0f0;
+            color: #111;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>مرحباً بك في موقع NJC Mining</h1>
+    <p>استثمر وابدأ الربح الآن!</p>
+
+    <input type="text" id="username" placeholder="اسم المستخدم">
+    <input type="number" id="investment" placeholder="المبلغ بالدولار">
+    <br>
+    <button onclick="sendInvestment()">استثمر الآن</button>
+
+    <p id="response"></p>
+
+    <script>
+        async function sendInvestment() {
+            const username = document.getElementById('username').value;
+            const investment = document.getElementById('investment').value;
+
+            const response = await fetch('https://your-backend-url.com/invest', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, investment })
+            });
+
+            const result = await response.json();
+            document.getElementById('response').textContent = result.message;
+        }
+    </script>
+</body>
+</html>

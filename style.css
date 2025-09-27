@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    direction: rtl;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+}
+
+.calculator-container {
+    background-color: #162447;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #1f4068;
+    text-align: center;
+}
+
+h1 {
+    color: #e43f5a;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+p {
+    color: #a0a0a0;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #1f4068;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.input-group input::placeholder {
+    color: #6a6a6a;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e43f5a;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #b8324f;
+    transform: translateY(-2px);
+}
+
+.results {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.level {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-right: 5px solid #1f4068;
+    transition: all 0.3s ease;
+}
+
+.level.support { border-right-color: #2ecc71; } /* أخضر للدعم */
+.level.resistance { border-right-color: #e74c3c; } /* أحمر للمقاومة */
+.level.golden { border-right-color: #f1c40f; } /* ذهبي للنسبة الذهبية */
+
+
+.level-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.level-percent {
+    font-weight: bold;
+}
+
+.level-price {
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: #e43f5a;
+}
+
+#analysis-text {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f1c40f;
+}

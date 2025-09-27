@@ -1,59 +1,38 @@
-
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>NJC Mining</title>
-    <style>
-        body {
-            background-color: #111;
-            color: #0f0;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-        input, button {
-            padding: 10px;
-            margin: 10px;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-        }
-        input {
-            width: 250px;
-        }
-        button {
-            background-color: #0f0;
-            color: #111;
-            cursor: pointer;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبة فيبوناتشي للتحليل الفني</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>مرحباً بك في موقع NJC Mining</h1>
-    <p>استثمر وابدأ الربح الآن!</p>
+    <div class="calculator-container">
+        <h1>حاسبة فيبوناتشي</h1>
+        <p>للذهب (XAUUSD) والبيتكوين (BTCUSD) على إطار 15 دقيقة</p>
 
-    <input type="text" id="username" placeholder="اسم المستخدم">
-    <input type="number" id="investment" placeholder="المبلغ بالدولار">
-    <br>
-    <button onclick="sendInvestment()">استثمر الآن</button>
+        <div class="input-group">
+            <label for="high">أعلى قمة (High)</label>
+            <input type="number" id="high" placeholder="أدخل أعلى سعر للقمة">
+        </div>
 
-    <p id="response"></p>
+        <div class="input-group">
+            <label for="low">أدنى قاع (Low)</label>
+            <input type="number" id="low" placeholder="أدخل أدنى سعر للقاع">
+        </div>
 
-    <script>
-        async function sendInvestment() {
-            const username = document.getElementById('username').value;
-            const investment = document.getElementById('investment').value;
+        <div class="input-group">
+            <label for="current">السعر الحالي (Current Price)</label>
+            <input type="number" id="current" placeholder="أدخل السعر الحالي">
+        </div>
 
-            const response = await fetch('https://your-backend-url.com/invest', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, investment })
-            });
+        <button id="calculate-btn">احسب مستويات فيبوناتشي</button>
 
-            const result = await response.json();
-            document.getElementById('response').textContent = result.message;
-        }
-    </script>
+        <div id="results-container" class="results">
+            <!-- النتائج ستظهر هنا -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
